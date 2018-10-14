@@ -1,0 +1,15 @@
+<div class="jumbotron jumbotron-fluid mt-30" style="text-align:center;">
+  <div class="container">
+    <h1 class="display-4">Welcome to MyBlog</h1>
+  </div>
+</div>
+
+<div class="row">
+  <% @posts.each do |post| %>
+      <div class="col-sm-4">
+           <h1><%= post.title%></h1>
+           <p><%= truncate(post.content, length: 150)%></p>
+           <%= link_to "Chi tiết",  post_path(post) %>
+        </div>
+  <%end%>
+</div>
